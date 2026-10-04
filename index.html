@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="CineScope - Premium dark cinematic movie discovery platform. Explore popular movies, ratings and genres."
+  >
+
+  <title>CineScope | Discover Your Next Movie</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+
+  <header class="navbar" id="navbar">
+
+    <div class="nav-container">
+
+      <a
+        href="#home"
+        class="nav-logo"
+        aria-label="CineScope Home"
+      >
+        <span class="logo-icon">🎬</span>
+
+        <span class="logo-text">
+          Cine<span class="logo-accent">Scope</span>
+        </span>
+      </a>
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+
+
+      <!-- NAVIGATION -->
+
+      <nav
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a
+          href="#home"
+          class="nav-link active"
+        >
+          Home
+        </a>
+
+        <a
+          href="#movies"
+          class="nav-link"
+        >
+          Movies
+        </a>
+
+        <a
+          href="#about"
+          class="nav-link"
+        >
+          About
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+
+    <section
+      class="hero-section"
+      id="home"
+    >
+
+      <div class="hero-glow"></div>
+
+
+      <div class="hero-container">
+
+        <span class="hero-badge">
+          WELCOME TO CINESCOPE
+        </span>
+
+
+        <h1 class="hero-title">
+
+          Discover Your
+
+          <span class="accent-text">
+            Next Movie
+          </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+          Explore popular movies, ratings and genres.
+
+          Find something worth watching tonight.
+
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-container">
+
+          <div class="search-input-wrapper">
+
+            <span
+              class="search-icon"
+              aria-hidden="true"
+            >
+              🔍
+            </span>
+
+
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search for a movie..."
+              autocomplete="off"
+              aria-label="Search for a movie"
+            >
+
+
+            <button
+              type="button"
+              id="clearSearchBtn"
+              class="clear-btn"
+              title="Clear search"
+              aria-label="Clear search input"
+            >
+              &times;
+            </button>
+
+          </div>
+
+
+          <button
+            type="button"
+            id="searchBtn"
+            class="search-btn"
+          >
+            Search
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         MOVIES SECTION
+         ========================================== -->
+
+    <section
+      class="movies-section"
+      id="movies"
+    >
+
+      <div class="section-container">
+
+
+        <!-- ======================================
+             FILTERS + SORTING
+             ====================================== -->
+
+        <div class="section-header">
+
+
+          <div class="movie-filters">
+
+
+            <!-- GENRE -->
+
+            <select
+              id="genreFilter"
+              class="movie-filter"
+              aria-label="Filter by genre"
+            >
+
+              <option value="All">
+                All Genres
+              </option>
+
+            </select>
+
+
+
+            <!-- RATING -->
+
+            <select
+              id="ratingFilter"
+              class="movie-filter"
+              aria-label="Filter by rating"
+            >
+
+              <option value="All">
+                All Ratings
+              </option>
+
+              <option value="9">
+                9+ ⭐
+              </option>
+
+              <option value="8">
+                8+ ⭐
+              </option>
+
+              <option value="7">
+                7+ ⭐
+              </option>
+
+              <option value="6">
+                6+ ⭐
+              </option>
+
+            </select>
+
+
+
+            <!-- YEAR -->
+
+            <select
+              id="yearFilter"
+              class="movie-filter"
+              aria-label="Filter by year"
+            >
+
+              <option value="All">
+                All Years
+              </option>
+
+            </select>
+
+
+
+            <!-- SORT -->
+
+            <select
+              id="sortFilter"
+              class="movie-filter"
+              aria-label="Sort movies"
+            >
+
+              <option value="default">
+                Sort By
+              </option>
+
+              <option value="ratingDesc">
+                ⭐ Highest Rated
+              </option>
+
+              <option value="ratingAsc">
+                ⭐ Lowest Rated
+              </option>
+
+              <option value="newest">
+                🆕 Newest
+              </option>
+
+              <option value="oldest">
+                📅 Oldest
+              </option>
+
+            </select>
+
+
+
+            <!-- CLEAR FILTERS -->
+
+            <button
+              type="button"
+              id="clearFiltersBtn"
+              class="clear-filters-btn"
+            >
+              Clear Filters
+            </button>
+
+          </div>
+
+
+
+          <!-- ======================================
+               SECTION TITLE
+               ====================================== -->
+
+          <div class="header-titles">
+
+            <span class="section-label">
+              EXPLORE
+            </span>
+
+            <h2 class="section-heading">
+              Popular Movies
+            </h2>
+
+          </div>
+
+
+
+          <!-- MOVIE COUNT -->
+
+          <div class="header-count">
+
+            <span
+              id="movieCount"
+              class="movie-count-badge"
+            >
+              0 Movies
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- ======================================
+             MOVIE GRID
+             ====================================== -->
+
+        <div
+          id="movieGrid"
+          class="movie-grid"
+          aria-live="polite"
+        >
+
+          <!-- Movies populated by JavaScript -->
+
+        </div>
+
+
+
+        <!-- ======================================
+             NO RESULTS
+             ====================================== -->
+
+        <div
+          id="noResults"
+          class="no-results hidden"
+        >
+
+          <div class="no-results-icon">
+            📽️
+          </div>
+
+
+          <p class="no-results-title">
+            No movies found.
+          </p>
+
+
+          <p class="no-results-text">
+            Try changing your search or filters.
+          </p>
+
+
+          <button
+            type="button"
+            id="resetSearchBtn"
+            class="reset-search-btn"
+          >
+            Reset Search
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         ABOUT SECTION
+         ========================================== -->
+
+    <section
+      class="about-section"
+      id="about"
+    >
+
+      <div class="section-container">
+
+
+        <div class="about-card">
+
+          <div class="about-glow"></div>
+
+
+          <div class="about-content">
+
+
+            <span class="about-label">
+              ABOUT CINESCOPE
+            </span>
+
+
+            <h2 class="about-heading">
+              A better way to discover your next movie.
+            </h2>
+
+
+            <p class="about-description">
+
+              CineScope is a clean and modern movie discovery
+              platform designed to make finding something worth
+              watching simple.
+
+            </p>
+
+
+            <p class="about-description">
+
+              Explore popular movies, search by title, filter
+              by genre, rating and year, and sort movies based
+              on what you want to watch.
+
+            </p>
+
+
+            <p class="about-description">
+
+              Every movie card gives you quick access to its
+              poster, release year, rating and detailed
+              information.
+
+            </p>
+
+
+            <div class="about-features">
+
+
+              <div class="about-feature">
+
+                <span class="feature-icon">
+                  ✦
+                </span>
+
+                <div>
+
+                  <strong>
+                    Discover
+                  </strong>
+
+                  <span>
+                    Find movies you'll love.
+                  </span>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="about-feature">
+
+                <span class="feature-icon">
+                  ◉
+                </span>
+
+                <div>
+
+                  <strong>
+                    Filter
+                  </strong>
+
+                  <span>
+                    Browse your way.
+                  </span>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="about-feature">
+
+                <span class="feature-icon">
+                  ↗
+                </span>
+
+                <div>
+
+                  <strong>
+                    Explore
+                  </strong>
+
+                  <span>
+                    Dive into movie details.
+                  </span>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ==========================================
+       MOVIE DETAILS MODAL
+       ========================================== -->
+
+  <div
+    id="movieModal"
+    class="modal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
+
+    <div
+      class="modal-backdrop"
+      id="modalBackdrop"
+    ></div>
+
+
+    <div class="modal-wrapper">
+
+      <div class="modal-content">
+
+
+        <!-- CLOSE -->
+
+        <button
+          type="button"
+          id="modalCloseBtn"
+          class="modal-close"
+          aria-label="Close movie details"
+        >
+          &times;
+        </button>
+
+
+
+        <div class="modal-layout">
+
+
+          <!-- POSTER -->
+
+          <div class="modal-poster-col">
+
+            <img
+              id="modalPoster"
+              src=""
+              alt="Movie Poster"
+              class="modal-poster"
+            >
+
+          </div>
+
+
+
+          <!-- DETAILS -->
+
+          <div class="modal-details-col">
+
+
+            <span class="modal-tag">
+              MOVIE DETAILS
+            </span>
+
+
+            <h2
+              id="modalTitle"
+              class="modal-title"
+            ></h2>
+
+
+            <div class="modal-meta-row">
+
+
+              <span
+                id="modalYear"
+                class="modal-year"
+              ></span>
+
+
+              <span
+                id="modalRating"
+                class="modal-rating"
+              ></span>
+
+
+            </div>
+
+
+            <p
+              id="modalDescription"
+              class="modal-description"
+            ></p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+
+      <div class="footer-logo">
+
+        <span class="logo-icon">
+          🎬
+        </span>
+
+        <span class="logo-text">
+          Cine<span class="logo-accent">Scope</span>
+        </span>
+
+      </div>
+
+
+      <p class="footer-tagline">
+        Discover movies you'll love.
+      </p>
+
+
+      <div class="footer-divider"></div>
+
+
+      <p class="footer-copy">
+
+        &copy; 2026 CineScope.
+
+        Built with HTML, CSS &amp; JavaScript.
+
+      </p>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ==========================================
+       JAVASCRIPT
+       ========================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
